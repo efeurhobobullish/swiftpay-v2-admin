@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=Jaro:opsz@6..72&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root{
+  --secondary: #f9f9f9;
+  --foreground: #f5f5f5;
+  --background: #fefefe;
+  --main: #444;
+  --muted: #777;
+  --line: #eee;
+  --pulse: #f2f2f2;
+}
+.dark{
+  --secondary: #1d1d21;
+  --foreground: #2d2d31;
+  --background: #131315;
+  --main: #ededf0;
+  --muted: #938f8f;
+  --line: #2d2d31;
+  --pulse: #3d3d41;
+}
+
+@theme{
+  --font-sans: 'Poppins', sans-serif;
+  --font-serif: 'Instrument Sans', serif;
+  --font-mono: 'Outfit', monospace;
+  --font-jaro: 'Jaro', serif;
+
+  --color-primary: #6951f2;
+  --color-secondary: var(--secondary);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --color-main: var(--main);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-pulse: var(--pulse);
+}
+
+*{
+  outline: none;
+  box-sizing: border-box;
+}
+
+html, body{
+  @apply bg-background text-main font-sans scroll-smooth;
+}
+
+.main {
+  @apply max-w-[90%] 2xl:max-w-[1280px] mx-auto;
+}
+
+.layout {
+  @apply max-w-[90%] md:max-w-[700px] mx-auto;
+}
+
+.center {
+  @apply flex items-center justify-center;
+}
+
+button,
+.btn {
+  @apply  cursor-pointer flex items-center justify-center gap-2 disabled:opacity-50;
+}
+
+.btn-primary {
+  @apply bg-gradient-to-r from-primary to-pink-400 text-white;
+}
+.btn-primary-2 {
+  @apply bg-primary text-white;
+}
+
+.input {
+  @apply bg-secondary text-sm border border-line rounded-lg px-4 h-10  focus:outline-none focus:border-primary invalid:border-red-500 disabled:bg-muted read-only:text-muted read-only:bg-foreground;
+}
+.select {
+  @apply bg-secondary text-sm border border-line rounded-lg px-4 h-10  focus:outline-none focus:border-primary invalid:border-red-500 disabled:bg-muted appearance-none;
+}
+.message {
+  @apply bg-secondary text-sm border border-line rounded-lg px-4 py-2  focus:outline-none focus:border-primary invalid:border-red-500;
+}
+
+.p{
+  color: #596779;
+}
+
